@@ -1,11 +1,12 @@
-# 📈 Stock Trading Analysis Platform
+# 📈 Stock Trading Analysis Platform with Live NSE Data
 
 [![CI/CD Pipeline](https://github.com/omkar21-dev/stock-analysis-platform/workflows/CI/CD%20Pipeline/badge.svg)](https://github.com/omkar21-dev/stock-analysis-platform/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 [![AWS](https://img.shields.io/badge/AWS-Deployed-orange.svg)](https://aws.amazon.com/)
+[![NSE](https://img.shields.io/badge/NSE-Live%20Data-green.svg)](https://www.nseindia.com/)
 
-> A comprehensive full-stack web application for stock trading technical analysis with enterprise-grade DevOps implementation
+> A comprehensive full-stack web application for stock trading technical analysis with **live NSE data integration** and enterprise-grade DevOps implementation
 
 ## 🌟 Project Highlights
 
@@ -17,6 +18,28 @@ This project demonstrates **production-ready DevOps practices** and modern softw
 - 🏗️ **Infrastructure as Code** (Terraform)
 - 📊 **Monitoring & Observability** (Prometheus, Grafana)
 - 🔒 **Security Best Practices**
+- 📈 **Live Market Data** (NSE Integration)
+
+## 🚀 New Feature: Live NSE Data Integration
+
+### Real-time Market Data
+- **Live Stock Quotes**: Real-time prices from NSE
+- **Market Status**: Live market open/close status
+- **Top Gainers/Losers**: Dynamic market movers
+- **NIFTY 50 Data**: Complete index information
+- **Stock Search**: Real-time symbol and company search
+- **Historical Data**: Price history and trends
+
+### Performance Features
+- **Smart Caching**: In-memory caching with configurable TTL
+- **Background Updates**: Automated data refresh via cron jobs
+- **Rate Limiting**: Intelligent API call management
+- **Error Recovery**: Automatic retry mechanisms
+
+### Supported Stocks
+Popular Indian stocks including RELIANCE, TCS, HDFCBANK, INFY, HINDUNILVR, ICICIBANK, KOTAKBANK, BHARTIARTL, ITC, SBIN, and many more.
+
+📖 **[Complete NSE Integration Documentation](./NSE_INTEGRATION.md)**
 
 ## 🏗️ Architecture Overview
 
@@ -28,11 +51,14 @@ graph TB
     D --> E[EC2 Instances]
     E --> F[RDS PostgreSQL]
     E --> G[ElastiCache Redis]
+    E --> N[NSE API]
     H[GitHub] --> I[GitHub Actions]
     I --> J[ECR Registry]
     J --> E
     K[Prometheus] --> L[Grafana]
     E --> K
+    M[Scheduler Service] --> N
+    M --> O[Cache Service]
 ```
 
 ## 🛠️ Technology Stack

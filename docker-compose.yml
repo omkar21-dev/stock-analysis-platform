@@ -23,9 +23,7 @@ services:
 
   # Backend API
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: omkarmokal21/stock-analysis-backend:latest
     container_name: stock-analysis-api
     environment:
       NODE_ENV: development
@@ -43,30 +41,22 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - stock-network
-    volumes:
-      - ./backend:/app
-      - /app/node_modules
-    command: npm run dev
+      stock-network:
+        aliases:
+          - backend-service
 
   # Frontend React App
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.dev
+    image: omkarmokal21/stock-analysis-frontend:latest
     container_name: stock-analysis-frontend
     environment:
       REACT_APP_API_URL: http://localhost:3001/api
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
     networks:
       - stock-network
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    command: npm start
 
   # Redis for caching
   redis:

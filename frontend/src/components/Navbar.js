@@ -19,7 +19,7 @@ const Navbar = () => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', gap: 1 }}>
           <Link to="/" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 1 }}>
             <TrendingUp />
-            Stock Analysis Platform
+            Invest Karega India
             <Chip label="Live NSE Data" size="small" color="success" />
           </Link>
         </Typography>

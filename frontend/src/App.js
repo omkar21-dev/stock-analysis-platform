@@ -11,6 +11,8 @@ import CreateAnalysis from './pages/CreateAnalysis';
 import AnalysisDetail from './pages/AnalysisDetail';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
 import Nifty50Dashboard from './components/Nifty50Dashboard';
 import LiveStockChart from './components/LiveStockChart';
 import { AuthProvider } from './contexts/AuthContext';
@@ -18,13 +20,19 @@ import { AuthProvider } from './contexts/AuthContext';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#667eea',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#764ba2',
     },
     background: {
       default: '#f5f5f5',
+    },
+    success: {
+      main: '#4caf50',
+    },
+    error: {
+      main: '#f44336',
     },
   },
   components: {
@@ -42,6 +50,13 @@ const theme = createTheme({
           borderRadius: 8,
           textTransform: 'none',
           fontWeight: 600,
+        },
+      },
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        root: {
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
         },
       },
     },
@@ -75,6 +90,8 @@ function App() {
               <Route path="/analysis/:id" element={<AnalysisDetail />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/reset-password" element={<ResetPassword />} />
             </Routes>
           </Router>
         </AuthProvider>

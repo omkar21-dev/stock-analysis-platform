@@ -95,7 +95,7 @@ const Home = () => {
       {/* Hero Section */}
       <Box textAlign="center" sx={{ mb: 6 }}>
         <Typography variant="h2" component="h1" gutterBottom>
-          📈 Stock Analysis Platform
+          📈 Invest Karega India
         </Typography>
         <Typography variant="h5" color="text.secondary" paragraph>
           Professional Stock Trading Analysis with Live NSE Data Integration

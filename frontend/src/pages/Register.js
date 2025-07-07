@@ -50,11 +50,11 @@ const Register = () => {
     <Container maxWidth="sm" sx={{ mt: 8 }}>
       <Paper elevation={3} sx={{ p: 4 }}>
         <Box textAlign="center" sx={{ mb: 3 }}>
-          <Typography variant="h4" component="h1" gutterBottom>
-            Create Account
+          <Typography variant="h4" component="h1" gutterBottom fontWeight="bold">
+            Join Invest Karega India
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Join our trading community
+            Start your investment journey today
           </Typography>
         </Box>
 

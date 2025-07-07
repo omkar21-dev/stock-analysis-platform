@@ -91,6 +91,7 @@ app.use('/api/analysis', require('./routes/analysis'));
 app.use('/api/stocks', require('./routes/stocks'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/analytics', require('./routes/analytics')); // New analytics route
+app.use('/api/nifty', require('./routes/nifty')); // NIFTY 50 and charts route
 app.use('/api/docs', require('./routes/docs')); // New documentation route
 app.use('/health', require('./routes/health')); // Enhanced health check
 
